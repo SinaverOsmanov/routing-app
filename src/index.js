@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./sass/index.scss";
 import App from "./App";
-import { createStore } from "redux";
 import { Provider } from "react-redux";
-import { rootReducer } from "./store/store";
 import { BrowserRouter } from "react-router-dom";
-
-let store = createStore(rootReducer);
+import { store } from "./store/store";
 
 ReactDOM.render(
   <BrowserRouter>

@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import NodeForm from "./components/NodeForm";
-import { Link, Route, Routes, useLocation } from "react-router-dom";
-import BreadCrumbs from "./components/BreadCrumbs";
-import NodeList from "./components/NodeList";
-import Header from "./components/Header";
+import { useLocation } from "react-router-dom";
+import BreadCrumbs from "./components/breadcrumbs/BreadCrumbs";
+import Header from "./components/header/Header";
+import Content from "./components/content/Content";
 import { useRouteState } from "./hooks/useRouteState";
 
-function App() {
-  const { pathname } = useLocation();
+export default function App() {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
   const [state] = useRouteState(pathname);
+
+  const theme = state && state.nodes.length === 0 ? "facebook" : "whatsApp";
+
   useEffect(() => {
     dispatch({
       type: "set",
@@ -19,46 +21,10 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
-      <Routes>
-        {!state ? (
-          <Route path="*" element={<ErrorPage />} />
-        ) : (
-          <Route path={pathname} element={<RouteComponent state={state} />} />
-        )}
-      </Routes>
-    </div>
-  );
-}
-
-export default App;
-
-function RouteComponent({ state }) {
-  const { pathname } = useLocation();
-
-  const dispatch = useDispatch();
-
-  function onSubmitForm(form) {
-    dispatch({
-      type: "add",
-      payload: { form, location: pathname, componentState: state },
-    });
-  }
-
-  return (
-    <div>
-      <Header title={state.title} />
+    <div className={`app ${theme} col`}>
+      <Header title={state && state.title} />
       <BreadCrumbs />
-      <NodeForm onSubmitForm={onSubmitForm} />
-      <NodeList nodes={state.nodes} />
+      <Content state={state} />
     </div>
-  );
-}
-
-function ErrorPage() {
-  return (
-    <h1>
-      Такого пути нет, вернуться <Link to="/">на главную страницу</Link>{" "}
-    </h1>
   );
 }

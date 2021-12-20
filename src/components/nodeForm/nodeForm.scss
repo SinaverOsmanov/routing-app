@@ -1,0 +1,8 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.form {
+  & > div {
+    margin-bottom: 5px;
+  }
+}
