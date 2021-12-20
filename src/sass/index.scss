@@ -11,7 +11,7 @@
 
 body {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 h1 {
@@ -28,6 +28,10 @@ a {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+}
+
+.input {
   width: 100%;
 }
 

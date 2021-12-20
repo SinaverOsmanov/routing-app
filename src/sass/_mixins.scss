@@ -2,3 +2,8 @@
   display: flex;
   flex-direction: $type;
 }
+
+@mixin flexPosition($justify: normal, $align: normal) {
+  justify-content: $justify;
+  align-items: align;
+}

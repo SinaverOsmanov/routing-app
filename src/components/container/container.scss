@@ -1,0 +1,8 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.container {
+  max-width: $app-width;
+  width: $app-width;
+  margin: 0 auto;
+}

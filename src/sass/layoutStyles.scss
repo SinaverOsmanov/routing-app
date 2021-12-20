@@ -8,3 +8,15 @@
 .col {
   @include flex(column);
 }
+
+.justify {
+  justify-content: space-between;
+}
+
+.align {
+  align-items: center;
+}
+
+.flex {
+  flex: 1;
+}

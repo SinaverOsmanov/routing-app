@@ -16,13 +16,13 @@ export default function NodeComponent({ state }) {
   }
 
   return (
-    <>
+    <div className="row">
       <div className="col" style={{ marginRight: "20px" }}>
         <NodeForm onSubmitForm={onSubmitForm} />
       </div>
       <div className="col">
         <NodeList nodes={state.nodes} />
       </div>
-    </>
+    </div>
   );
 }

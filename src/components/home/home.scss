@@ -1,0 +1,12 @@
+.home {
+  & > div {
+    flex: 1;
+    & > .row {
+      margin-bottom: 10px;
+    }
+  }
+  a {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

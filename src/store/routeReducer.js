@@ -23,7 +23,7 @@ export function routeReducer(state = initialState, action) {
       }
       return { ...state };
     case "set":
-      const r = generateState(payload, initialState);
+      const r = generateState(payload, state);
       return { ...r };
     case "get":
       return { ...state };
