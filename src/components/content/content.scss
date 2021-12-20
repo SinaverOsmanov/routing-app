@@ -2,8 +2,6 @@
 @import "../../sass/variables";
 
 .content {
-  height: 100vh;
+  height: calc(100vh - ($header-height + $breadcrumbs-height));
   padding: 10px;
-  width: $app-width;
-  margin: 0 auto;
 }

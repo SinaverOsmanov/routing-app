@@ -7,5 +7,12 @@
   li {
     list-style-type: decimal;
     margin-bottom: 5px;
+    span {
+      font-weight: 700;
+      color: blue;
+      &:hover {
+        color: $whatsApp-button;
+      }
+    }
   }
 }

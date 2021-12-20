@@ -20,7 +20,7 @@ export default function NodeList({ nodes }) {
                       : node.route
                   }`}
                 >
-                  {node.title}
+                  <span>{node.title}</span>
                 </Link>
               </li>
             ))

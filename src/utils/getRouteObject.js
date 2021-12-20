@@ -4,7 +4,6 @@ export function searchRoute(loc, obj) {
   if (loc === "/main") {
     return obj;
   }
-
   const path = pathToArray(loc).map((p) => "/" + p);
   const pathCopy = [...path];
 
@@ -18,7 +17,7 @@ function recursion(path, object, parent) {
   if (tmpPath[0] === tmpObject.route && tmpPath.length === 1) {
     return tmpObject;
   } else {
-    if (tmpPath[0] !== tmpObject.route && parent.nodes.length) {
+    if (tmpPath[0] !== tmpObject.route && parent && parent.nodes.length) {
       return;
     } else if (tmpPath[0] === tmpObject.route && tmpObject.nodes.length > 0) {
       tmpPath.shift();

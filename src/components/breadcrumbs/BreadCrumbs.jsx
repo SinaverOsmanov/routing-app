@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { pathToArray } from "../../utils/pathToArray";
+import Container from "./../container/Container";
 
 function BreadCrumbs() {
   const { pathname } = useLocation();
@@ -10,22 +11,24 @@ function BreadCrumbs() {
 
   return (
     <div className="breadcrumbs row">
-      {breadCrumbs.map((b, i, array) => {
-        link += "/" + b;
-        return (
-          <React.Fragment key={i}>
-            {array.length - (i + 1) === 0 ? (
-              <div>{b}</div>
-            ) : (
-              <div>
-                <Link to={link} key={i}>
-                  {b}
-                </Link>
+      <Container>
+        <div className="row">
+          {breadCrumbs.map((b, i, array) => {
+            link += "/" + b;
+            return (
+              <div className="col breadcrumbs-item" key={i}>
+                {array.length - (i + 1) === 0 ? (
+                  <span>{b}</span>
+                ) : (
+                  <Link to={link} key={i}>
+                    <span>{b}</span>
+                  </Link>
+                )}
               </div>
-            )}
-          </React.Fragment>
-        );
-      })}
+            );
+          })}
+        </div>
+      </Container>
     </div>
   );
 }
