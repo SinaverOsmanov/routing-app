@@ -27,9 +27,9 @@
       "react-app",
       "react-app/jest"
     ],
-    "rules": [
+    "rules": {
       "react-hooks/exhaustive-deps": "off",
-    ],
+    },
   },
   "browserslist": {
     "production": [
