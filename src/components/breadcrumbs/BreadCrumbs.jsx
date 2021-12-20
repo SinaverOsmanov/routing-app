@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { pathToArray } from "../utils/pathToArray";
+import { pathToArray } from "../../utils/pathToArray";
 
 function BreadCrumbs() {
   const { pathname } = useLocation();
@@ -9,20 +9,19 @@ function BreadCrumbs() {
   let link = "";
 
   return (
-    <div>
+    <div className="breadcrumbs row">
       {breadCrumbs.map((b, i, array) => {
         link += "/" + b;
         return (
           <React.Fragment key={i}>
             {array.length - (i + 1) === 0 ? (
-              <span>{b}</span>
+              <div>{b}</div>
             ) : (
-              <span>
+              <div>
                 <Link to={link} key={i}>
                   {b}
                 </Link>
-                -&gt;
-              </span>
+              </div>
             )}
           </React.Fragment>
         );

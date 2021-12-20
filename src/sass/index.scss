@@ -1,0 +1,66 @@
+@import "./importStyle.scss";
+
+@import "./mixins";
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.button {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.facebook {
+  background: $facebook-content;
+}
+
+.whatsApp {
+  background: $whatsApp-content;
+}
+
+.whatsApp a:hover {
+  color: #25d366;
+}
+
+.facebook a:hover {
+  color: #3b5998;
+}
+
+.facebook .button {
+  background: $facebook-button;
+}
+
+.whatsApp .button {
+  background: $whatsApp-button;
+}
+
+.facebook .button:hover {
+  background: white;
+  color: $facebook-header;
+}
+
+.whatsApp .button:hover {
+  background: white;
+  color: $whatsApp-header;
+}

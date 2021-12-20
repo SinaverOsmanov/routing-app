@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { routeString } from "../utils/routeString";
+import { routeString } from "../../utils/routeString";
 import {
   firstLetterToUppercase,
   isStringWithCyrilic,
   trimString,
-} from "../utils/functionForString";
-import { reduceFunctions } from "../utils/reduceFunctions";
+} from "../../utils/functionForString";
+import { reduceFunctions } from "../../utils/reduceFunctions";
+import { Button } from "../../ui/Button";
+import { Input } from "../../ui/Input";
 
 export default function NodeForm({ onSubmitForm }) {
   const [form, setForm] = useState({ title: "", route: "", nodes: [] });
@@ -33,28 +35,26 @@ export default function NodeForm({ onSubmitForm }) {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Заголовок</label>
-        <input
-          id="title"
-          type="text"
-          name="title"
-          value={form.title}
-          required
-          onChange={handleChange}
-        />
-        <label htmlFor="route">Путь</label>
-        <input
-          id="route"
-          type="text"
-          name="route"
-          value={form.route}
-          required
-          onChange={handleChange}
-        />
-        <button>Добавить узел</button>
-      </form>
-    </>
+    <form className="form" onSubmit={handleSubmit}>
+      <Input
+        title={"Заголовок"}
+        id="title"
+        type="text"
+        name="title"
+        value={form.title}
+        required
+        onChange={handleChange}
+      />
+      <Input
+        title={"Путь"}
+        id="route"
+        type="text"
+        name="route"
+        value={form.route}
+        required
+        onChange={handleChange}
+      />
+      <Button className="button">Добавить узел</Button>
+    </form>
   );
 }

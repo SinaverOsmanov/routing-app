@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Button } from "../../ui/Button";
 
 export default function Header({ title }) {
   const { pathname } = useLocation();
@@ -17,11 +18,17 @@ export default function Header({ title }) {
   }
 
   return (
-    <header>
-      <h1>{title}</h1>
-      {pathname !== "/main" && (
-        <button onClick={handleClick}>Перейти к родительскому узлу</button>
-      )}
+    <header className="header row">
+      <div>
+        <h1>{title}</h1>
+      </div>
+      <div>
+        {pathname !== "/main" && (
+          <Button className="button" onClick={handleClick}>
+            Перейти к родительскому узлу
+          </Button>
+        )}
+      </div>
     </header>
   );
 }

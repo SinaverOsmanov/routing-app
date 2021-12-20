@@ -1,0 +1,11 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.list {
+  margin-left: 20px;
+  padding-top: 10px;
+  li {
+    list-style-type: decimal;
+    margin-bottom: 5px;
+  }
+}

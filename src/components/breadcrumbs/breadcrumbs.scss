@@ -1,0 +1,32 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+
+.breadcrumbs {
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #a1a1a1;
+
+  div {
+    @include flex(column);
+    margin-right: 10px;
+    position: relative;
+
+    &:last-child {
+      font-weight: 700;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      height: 4px;
+      width: 4px;
+      top: 7px;
+      right: -7px;
+      background: #000;
+    }
+    &:last-child:after {
+      content: none;
+    }
+  }
+}
